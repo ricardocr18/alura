@@ -9,3 +9,5 @@ function soma(){
 }
 
 console.log(soma())
+
+console.log("Feito")
