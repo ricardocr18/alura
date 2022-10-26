@@ -1,2 +1,2 @@
 # alura
-Repositorio destinado as trilhas do curso Alura. (Compasso)
+Repositorio destinado as trilhas do curso Alura.
