@@ -1,0 +1,8 @@
+//aqui estou removendo um valor de um array, usando o POP
+const notas = [10,7.5, 5, 10]
+notas.pop()
+console.log(notas)
+
+let media = (notas[0] + notas[1] + notas[2])/notas.length
+console.log(` A media é ${media}`)
+
