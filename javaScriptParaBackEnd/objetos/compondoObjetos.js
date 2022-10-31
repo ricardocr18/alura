@@ -1,4 +1,4 @@
-
+// Cliar um dependendte dentro do objeto e mudar o dados de um dependende
 const cliente = {
     nome: "Dede",
     idade: 18,
@@ -12,5 +12,7 @@ cliente.dependentes = {
     parentesco: "filho",
     dataNasc: "01/01/2001"
 }
+
+cliente.dependentes.nome = "Didi Moco"
 
 console.log(cliente)
