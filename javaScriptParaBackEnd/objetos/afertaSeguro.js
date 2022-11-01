@@ -1,4 +1,4 @@
-
+// aqui vamos verododcar o nome que tem dependente para oferecer um Seguro de Vida
 const cliente = {
     nome: "Dede",
     idade: 18,
@@ -23,3 +23,15 @@ const cliente = {
         this.saldo += valor
     }
 }
+
+function oferecerSeguro(obj){
+    const propsClientes = Object.keys(obj);
+    if(propsClientes.includes("dependentes")){
+        console.log (`oferta de seguro de vida para ${obj.nome}`)
+    }
+}
+
+oferecerSeguro(cliente)
+
+//Aqui estou pegando só os valores
+console.log(Object.values(cliente))
