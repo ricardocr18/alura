@@ -1,3 +1,4 @@
+
 const precosLivros = [
     {
         titulo: "javaScript",
@@ -18,9 +19,7 @@ const precosLivros = [
     {
         titulo: "Go",
         preco: 45,
-    }
+    },
 ];
 
-module.exports = {
-    precosLivros
-}
+module.exports =  precosLivros;
