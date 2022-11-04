@@ -6,15 +6,28 @@ function tratarErro(erro){
     throw new Error(chalk.red(erro.code, 'não ha arquivo no diretório'))
 }
 
-//trabalhar a função de modo Assicrono - PROMISES
-function pegarArquivo(caminhoDoArquivo) {
+//trabalhar função ASSICRONA com async/await também uso try/catch para tratar o erro caso apareça
+async function pegarArquivo(caminhoDoArquivo) {
+    try {
         const encoding = "utf-8";
-        fs.promises
-        .readFile(caminhoDoArquivo, encoding)
-        .then((texto) => console.log(chalk.green(texto)))
-        .catch(tratarErro)
+        const texto = await fs.promises.readFile (caminhoDoArquivo, encoding)
+        console.log(chalk.green(texto))
+    } catch (erro) {
+        tratarErro(erro)
+    }
+        
 }
 
+//trabalhar a função de modo Assicrono - PROMISES COM THEN()
+// function pegarArquivo(caminhoDoArquivo) {
+//         const encoding = "utf-8";
+//         fs.promises
+//         .readFile(caminhoDoArquivo, encoding)
+//         .then((texto) => console.log(chalk.green(texto)))
+//         .catch(tratarErro)
+// }
+
+//ESSA É A VERSÃO SICRONA
 // function pegarArquivo(caminhoDoArquivo) {
 //     const encoding = "utf-8";
 //     fs.readFile(caminhoDoArquivo, encoding, (erro, texto) => {
