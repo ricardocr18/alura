@@ -6,14 +6,23 @@ function tratarErro(erro){
     throw new Error(chalk.red(erro.code, 'não ha arquivo no diretório'))
 }
 
+//trabalhar a função de modo Assicrono - PROMISES
 function pegarArquivo(caminhoDoArquivo) {
-    const encoding = "utf-8";
-    fs.readFile(caminhoDoArquivo, encoding, (erro, texto) => {
-        if (erro) {
-            tratarErro(erro)
-        }
-        console.log(chalk.green(texto))
-    })
-};
+        const encoding = "utf-8";
+        fs.promises
+        .readFile(caminhoDoArquivo, encoding)
+        .then((texto) => console.log(chalk.green(texto)))
+        .catch(tratarErro)
+}
+
+// function pegarArquivo(caminhoDoArquivo) {
+//     const encoding = "utf-8";
+//     fs.readFile(caminhoDoArquivo, encoding, (erro, texto) => {
+//         if (erro) {
+//             tratarErro(erro)
+//         }
+//         console.log(chalk.green(texto))
+//     })
+// };
 
 pegarArquivo('./arquivo/texto.md');
