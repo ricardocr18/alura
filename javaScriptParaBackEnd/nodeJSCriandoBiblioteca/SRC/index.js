@@ -2,14 +2,14 @@
 import fs from 'fs'; //pega o arquivo 
 import chalk from 'chalk'; //aqui faz mudar a cor da letra (fonte)
 
-function extraiLinks(texto){
+function extraiLinks(texto) {
     const regex = /\[([^[\]]*?)\]\((https?:\/\/[^\s?#.].[^\s]*)\)/gm;
     const capturas = [...texto.matchAll(regex)];
-    const resultados = capturas.map(captura => ({[captura[1]]: captura[2]}))
-    return resultados;
+    const resultados = capturas.map(captura => ({ [captura[1]]: captura[2] }))
+    return resultados.length !== 0 ? resultados : 'não há links no arquivo';
 }
 
-function tratarErro(erro){
+function tratarErro(erro) {
     throw new Error(chalk.red(erro.code, 'não ha arquivo no diretório'))
 }
 
@@ -17,13 +17,16 @@ function tratarErro(erro){
 async function pegarArquivo(caminhoDoArquivo) {
     try {
         const encoding = "utf-8";
-        const texto = await fs.promises.readFile (caminhoDoArquivo, encoding)
-        console.log(extraiLinks(texto))
+        const texto = await fs.promises.readFile(caminhoDoArquivo, encoding)
+        return extraiLinks(texto)
     } catch (erro) {
         tratarErro(erro)
     }
-        
+
 }
+
+//aqui só estou exportanto uma função por isso utilizo o default
+export default pegarArquivo;
 
 //trabalhar a função de modo Assicrono - PROMISES COM THEN()
 // function pegarArquivo(caminhoDoArquivo) {
@@ -45,7 +48,7 @@ async function pegarArquivo(caminhoDoArquivo) {
 //     })
 // };
 
-pegarArquivo('./arquivo/texto.md');
+
 
 // regex \[[^[\]]*?\]
 // regex \(https?:\/\/[^\s?#.].[^\s]*\)
