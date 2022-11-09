@@ -19,7 +19,8 @@ const admin = {
     }
 }
 
-//nessa linha abaixo, vinculamos o exibirInfos de const user, com o const admin
+//nessa linha abaixo, vinculamos o exibirInfos de const user, com o const admin. Então o user é um prototipo
+// de admin, por isso que conseguimos usar o user
 Object.setPrototypeOf(admin, user)
 admin.criarCurso()
 admin.exibirInfos()
