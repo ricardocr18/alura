@@ -1,6 +1,6 @@
 //Famos criar classes aqui
 
-class User {
+export default class User {
     constructor(nome, email, nascimento, role, ativo = true){
         this.nome = nome
         this.email = email
@@ -14,7 +14,8 @@ class User {
     }
 }
 
-const novoUser = new User('Dede', 'dede@email.com', '2001-01-01')
-console.log(novoUser)
-console.log("============")
-console.log(novoUser.exibirInfo())
+//AQUI FIZ O TESTE PARA VALIDAR A CLASSE CRIADA ACIMA 😁
+// const novoUser = new User('Dede', 'dede@email.com', '2001-01-01')
+// console.log(novoUser)
+// console.log("============")
+// console.log(novoUser.exibirInfo())
