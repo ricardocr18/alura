@@ -1,4 +1,4 @@
-//TRÊS FORMAS DE FAZER O PROTOTIPO
+//TRÊS FORMAS DE FAZER O PROTOTIPO E CONSTRUTORA
 
 
 // function User(nome, email){
