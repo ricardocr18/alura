@@ -5,6 +5,8 @@ const user = {
     role: "admin",
     ativo: true,
     exibirInfos: function (){
-        console.log
+        console.log(this.nome, this.email)
     }
 }
+
+user.exibirInfos()
