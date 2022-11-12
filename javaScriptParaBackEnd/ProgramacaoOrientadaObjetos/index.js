@@ -7,3 +7,5 @@ import User from "./User.js";
 
 const novoAdmin = new Admin('Zenilda', 'zenilda@gmail', '1955-03-03')
 console.log(novoAdmin.nome)
+novoAdmin.nome = 'Jorge'
+console.log(novoAdmin.nome)

@@ -26,7 +26,7 @@ export default class User {
     }
 
     get nasciment() {
-        return this.#bascimento
+        return this.#nascimento
     }
     get role() {
         return this.#role
@@ -36,10 +36,13 @@ export default class User {
         return this.#ativo
     }
 
+    set mome(novoNome) {
+        this.#nome = novoNome
+    }
+
     exibirInfos() {
-        const objUser = this.#montaObjUser()
-        return `${objUser.nome}, ${objUser.email}, ${objUser.nascimento}, ${objUser.role}
-        ${objUser.ativo}`
+        return `${this.nome}, ${this.email}, ${this.nascimento}, ${this.role}
+        ${this.ativo}`
     }
 }
 
