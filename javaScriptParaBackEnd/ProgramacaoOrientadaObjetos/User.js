@@ -7,6 +7,7 @@ export default class User {
     #role
     #ativo
 
+    //A colocação de # deixa os metodos privados
     constructor(nome, email, nascimento, role, ativo = true){
         this.#nome = nome
         this.#email = email
@@ -25,10 +26,10 @@ export default class User {
         })
     }
 
-    exibirInfo(){
+    exibirInfos(){
         const objUser = this.#montaObjUser()
-        return `${this.#nome}, ${this.#email}, ${this.#nascimento}, ${this.#role}
-        ${this.#ativo}`
+        return `${objUser.nome}, ${objUser.email}, ${objUser.nascimento}, ${objUser.role}
+        ${objUser.ativo}`
     }
 }
 
