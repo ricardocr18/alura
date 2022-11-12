@@ -6,10 +6,14 @@ export default class Admin extends User {
         super(nome, email, nascimento, role, ativo) //aqui estou pegando os dados de User, assim não preciso digitar tudo de novo
     }
 
+    exibirInfos(){
+        return `${this.nome}, ${this.role}, ${this.ativo}`
+    }
+
     criarCursos(nomeDoCurso, vagas) {
         return `Curso do ${nomeDoCurso} criado com ${vagas} vagas}`
     }
 }
 
-const novoAdmin = new Admin("Didi", 'didi@email.com', '2002-2-2')
+//const novoAdmin = new Admin("Didi", 'didi@email.com', '2002-2-2')
 //console.log(novoAdmin.criarCursos('JS', 30))

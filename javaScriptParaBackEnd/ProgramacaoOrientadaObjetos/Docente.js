@@ -10,7 +10,7 @@ export default class Docente extends User {
     }
 }
 
-const novoDocente = new Docente ('Ricardo', 'ricardo@email.com', '1976-04-18', 'docente')
+//const novoDocente = new Docente ('Ricardo', 'ricardo@email.com', '1976-04-18', 'docente')
 // console.log(novoDocente)
 // console.log(novoDocente.exibirInfos())
 // console.log(novoDocente.aprovaEstudante('Fernanda', 'JS'))
