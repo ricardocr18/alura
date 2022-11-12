@@ -8,7 +8,7 @@ export default class User {
     #ativo
 
     //A colocação de # deixa os metodos privados
-    constructor(nome, email, nascimento, role, ativo = true){
+    constructor(nome, email, nascimento, role, ativo = true) {
         this.#nome = nome
         this.#email = email
         this.#nascimento = nascimento
@@ -16,17 +16,27 @@ export default class User {
         this.#ativo = ativo
     }
 
-    #montaObjUser(){
-        return ({
-            nome: this.#nome,
-            email: this.#email,
-            nascimento: this.#nascimento,
-            role: this.#role,
-            ativo: this.#ativo
-        })
+    //Aqui estou pegando o nome pelo metodo GET
+    get nome() {
+        return this.#nome
     }
 
-    exibirInfos(){
+    get email() {
+        return this.#email
+    }
+
+    get nasciment() {
+        return this.#bascimento
+    }
+    get role() {
+        return this.#role
+    }
+
+    get ativo() {
+        return this.#ativo
+    }
+
+    exibirInfos() {
         const objUser = this.#montaObjUser()
         return `${objUser.nome}, ${objUser.email}, ${objUser.nascimento}, ${objUser.role}
         ${objUser.ativo}`
