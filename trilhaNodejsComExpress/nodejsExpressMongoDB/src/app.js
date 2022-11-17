@@ -32,7 +32,7 @@ app.put('/livros/:id', (req, res) =>{
     res.json(livros)
 })
 
-//essa função está sendo usada no PUT e DELETE
+//essa função está sendo usada pelo PUT e DELETE
 function buscaLivro(id) {
     return livros.findIndex(livros => livros.id == id)
 }
