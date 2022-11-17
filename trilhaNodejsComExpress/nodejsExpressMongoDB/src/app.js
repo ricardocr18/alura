@@ -32,8 +32,16 @@ app.put('/livros/:id', (req, res) =>{
     res.json(livros)
 })
 
+//essa função está sendo usada no PUT e DELETE
 function buscaLivro(id) {
     return livros.findIndex(livros => livros.id == id)
 }
+
+app.delete('/livros/:id', (req, res) =>{
+    let {id} = req.params;
+    let index = buscaLivro(id);
+    livros.splice(index, 1);
+    res.send(`Livros ${id} removido com sucesso`)    
+})
 
 export default app
