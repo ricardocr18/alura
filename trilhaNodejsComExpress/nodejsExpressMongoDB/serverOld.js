@@ -1,4 +1,4 @@
-//esse arquivo descreve como ter a resposta pelo HTTP
+//esse arquivo descreve como ter a resposta pelo HTTP sem precisar de fazer rota de GET no postman, a resposta vai na URL
 
 const http = require ('http')
 const port = 3000; 

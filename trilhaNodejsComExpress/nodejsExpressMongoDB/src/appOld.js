@@ -1,10 +1,6 @@
+//Aqui tenho todas as Rotas o CRUD num mesmo arquivo, até o meu Banco de dados está aqui o Array livro :)
+//Aqui uso o postman só com esse arquivo, preciso só da biblioteca Express
 import express from "express";
-import db from "./config/dbConnect.js"
-
-db.on("error", console.log.bind(console, 'Erro de conexão'))
-db.once('open', () => {
-    console.log('conexão com o banco feita com sucesso')
-})
 
 const app = express();
 app.use(express.json())
