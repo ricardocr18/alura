@@ -19,12 +19,6 @@ app.get('/', (req, res) => {
     res.status(200).send('Curso de NodeJS');
 })
 
-app.get('/livros', (req, res) => {
-    livros.find((err, livros) => {
-        res.status(200).json(livros)
-    })
-
-})
 
 app.get('/livros/:id', (req, res) => {
     let index = buscaLivro(req.params.id);
